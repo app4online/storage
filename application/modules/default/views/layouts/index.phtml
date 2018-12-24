@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <link href="/assets/libraries/bmd/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/libraries/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/assets/libraries/bmd/css/flaticon.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="/assets/libraries/bmd/css/prettify.css" />
+    <link rel="stylesheet" href="/assets/libraries/bmd/css/main.min.css" />
+
+    <link rel="stylesheet" href="/assets/css/bmd-additional.css?_=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="/assets/css/general.css?_=<?php echo time(); ?>" />
+
+
+    <script src="/assets/libraries/jquery/jquery.min.js"></script>
+    <script src="/assets/libraries/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/assets/libraries/bmd/js/moment.min.js"></script>
+    <script src="/assets/libraries/bmd/js/bootstrap-material-datetimepicker-customized.js"></script>
+    <script src="/assets/libraries/bmd/js/jquery.easing.min.js"></script>
+    <script src="/assets/libraries/bmd/js/prettify.js"></script>
+    <script src="/assets/libraries/bmd/js/main.min.js"></script>
+
+
+    <script src="/assets/js/modals.js?_=<?php echo time(); ?>"></script>
+    <script src="/assets/js/loader.js?_=<?php echo time(); ?>"></script>
+    <script src="/assets/js/script.js?_=<?php echo time(); ?>"></script>
+
+<title>Storage</title>
+
+</head>
+<body>
+
+<script type="text/html" id="modal-template">
+
+    <div class="modal" id="modal">
+        <div class="modal-dialog bmd-modal-dialog">
+            <div class="modal-content bmd-border-primary">
+                <div class="modal-header bmd-bg-primary">
+                    <button type="button" class="close btn-link bmd-flat-btn bmd-flat-btn-light" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title bmd-text-blue-100"></h4>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer bmd-border-blue-100">
+                    <button type="button" class="btn bmd-ripple bmd-floating"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+
+<script type="text/html" id="folder-upload">
+
+    <form data-create-folder-form="true">
+
+        <div class="row">
+
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <div class="bmd-field-group">
+                        <input type="text" class="bmd-input" required="true" name="name" />
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">Folder name</label>
+                        <span class="bmd-field-feedback"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 error" style="display: none;">
+                <div class="alert alert-dismissible alert-danger">
+                    Check please folder name.<br>
+                    Folder name must not contain the next characters: \ / : * ? " < > |
+                </div>
+            </div>
+
+            <div class="col-xs-12 text-right">
+                <button type="submit" class="btn btn-primary bmd-ripple">Create</button>
+            </div>
+        </div>
+
+    </form>
+
+</script>
+
+
+<script type="text/html" id="file-url-upload">
+
+    <form data-upload-by-url-form="true">
+
+        <div class="row">
+
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <div class="bmd-field-group">
+                        <input type="text" class="bmd-input" required="true" name="url" />
+                        <span class="bmd-bar"></span>
+                        <label class="bmd-label">URL</label>
+                        <span class="bmd-field-feedback"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 error" style="display: none;">
+                <div class="alert alert-dismissible alert-danger">
+                    Error getting data by url
+                </div>
+            </div>
+
+            <div class="col-xs-12 text-right">
+                <button type="submit" class="btn btn-primary bmd-ripple">Upload</button>
+            </div>
+        </div>
+
+    </form>
+
+</script>
+
+
+<div class="loader"><i class="fa fa-spinner fa-spin text-primary"></i></div>
+
+<div class="main">
+
+    <div class="block white bmd-floating">
+        <div class="row">
+            <div class="col-xs-12">
+                <?php echo $this->partial('index/form.phtml'); ?>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <?php echo $this->layout()->content; ?>
+
+</div>
+
+</body>
+</html>
+
+

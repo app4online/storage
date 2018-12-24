@@ -1,0 +1,49 @@
+<?php
+
+$path = Zend_Registry::get('config')['fs']['path'];
+
+$files = array_map(function ($item) use ($path) {
+    return [
+        'name' => basename($item),
+        'path' => substr(realpath($item), strlen(realpath($path))),
+        'time' => filemtime(realpath($item)),
+        'mime' => mime_content_type(realpath($item)),
+        'url'  => Zend_Registry::get('config')['fs']['url'] . substr(realpath($item), strlen(realpath($path)))
+    ];
+}, glob($path . $this->path . '/*', GLOB_NOSORT));
+
+?>
+
+<div class="row">
+
+    <?php foreach ($files as $file) : ?>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+
+            <?php if ($file['mime'] == 'directory') : ?>
+
+                <?php echo $this->partial('index/partial/file/directory.phtml', ['file' => $file]); ?>
+
+            <?php elseif (in_array($file['mime'], ['image/png', 'image/jpg', 'image/jpeg', 'image/gif'])) : ?>
+
+                <?php echo $this->partial('index/partial/file/image.phtml', ['file' => $file]); ?>
+
+            <?php elseif ($file['mime'] == 'application/pdf') : ?>
+
+                <?php echo $this->partial('index/partial/file/pdf.phtml', ['file' => $file]); ?>
+
+            <?php elseif ($file['mime'] == 'text/plain') : ?>
+
+                <?php echo $this->partial('index/partial/file/text.phtml', ['file' => $file]); ?>
+
+            <?php else : ?>
+
+                <?php echo $this->partial('index/partial/file/file.phtml', ['file' => $file]); ?>
+
+            <?php endif; ?>
+
+        </div>
+
+    <?php endforeach; ?>
+
+</div>
