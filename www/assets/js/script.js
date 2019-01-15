@@ -2,14 +2,14 @@ var path = '/';
 
 function update(){
     loader.show();
-    $.get('/index/update', {path: path}, function(content){
+    $.get('/index/update', {path: path, ajax: true}, function(content){
         $('[data-container]').html(content);
         loader.hide();
     });
 }
 
 function updateTree() {
-    $.get('/index/tree', {path: '/'}, (branch) => {
+    $.get('/index/tree', {path: '/', ajax: true}, (branch) => {
         $('#treeview-sidebar-primary').html(branch);
     });
 }
@@ -78,7 +78,7 @@ $(document).ready(function(){
 
     $(document).on('click', '[data-tree]', function(){
 
-        $.get('/index/tree', {path: $(this).data('tree')}, (branch) => {
+        $.get('/index/tree', {path: $(this).data('tree'), ajax: true}, (branch) => {
 
             if ($(this).closest('li').find('ul').length) {
                 $(this).closest('li').find('ul').replaceWith(branch);
@@ -120,8 +120,8 @@ $(document).ready(function(){
 
         $(this).closest('.bmd-fab-speed-dial-container').find('.press').removeClass('press');
 
-        if (parent.selectFile) {
-            parent.selectFile($(this).data('select-file'));
+        if (parent.selectImage) {
+            parent.selectImage($(this).data('select-file'));
         }
 
         return false;

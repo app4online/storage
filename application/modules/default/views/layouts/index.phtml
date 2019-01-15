@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
 
+    <?php
+
+    /***
+     * <?php $url = Zend_Registry::get('config')['fs']['domain']; ?>
+
+    <link href="<?php echo $url; ?>/assets/libraries/bmd/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo $url; ?>/assets/libraries/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/libraries/bmd/css/flaticon.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/libraries/bmd/css/prettify.css" />
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/libraries/bmd/css/main.min.css" />
+
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/bmd-additional.css?_=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/general.css?_=<?php echo time(); ?>" />
+
+
+    <script src="<?php echo $url; ?>/assets/libraries/jquery/jquery.min.js"></script>
+    <script src="<?php echo $url; ?>/assets/libraries/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="<?php echo $url; ?>/assets/libraries/bmd/js/moment.min.js"></script>
+    <script src="<?php echo $url; ?>/assets/libraries/bmd/js/bootstrap-material-datetimepicker-customized.js"></script>
+    <script src="<?php echo $url; ?>/assets/libraries/bmd/js/jquery.easing.min.js"></script>
+    <script src="<?php echo $url; ?>/assets/libraries/bmd/js/prettify.js"></script>
+    <script src="<?php echo $url; ?>/assets/libraries/bmd/js/main.min.js"></script>
+
+
+    <script src="<?php echo $url; ?>/assets/js/modals.js?_=<?php echo time(); ?>"></script>
+    <script src="<?php echo $url; ?>/assets/js/loader.js?_=<?php echo time(); ?>"></script>
+    <script src="<?php echo $url; ?>/assets/js/script.js?_=<?php echo time(); ?>"></script>
+
+    <title>Storage</title>
+     */
+    ?>
+
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <base href="<?php echo Zend_Registry::get('config')['fs']['domain']; ?>" />
 
     <link href="/assets/libraries/bmd/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/assets/libraries/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -32,7 +70,7 @@
     <script src="/assets/js/loader.js?_=<?php echo time(); ?>"></script>
     <script src="/assets/js/script.js?_=<?php echo time(); ?>"></script>
 
-<title>Storage</title>
+    <title>Storage</title>
 
 </head>
 <body>

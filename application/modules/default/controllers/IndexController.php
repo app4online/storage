@@ -8,7 +8,7 @@ class IndexController extends Default_Controller_Base
 
         $this->view->path = $this->getParam('path', '/');
 
-        if ($this->getRequest()->isXmlHttpRequest()) {
+        if ($this->getParam('ajax') == 'true' || $this->getRequest()->isXmlHttpRequest()) {
             $this->_helper->layout()->disableLayout();
         }
     }

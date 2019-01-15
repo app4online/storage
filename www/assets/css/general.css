@@ -1,13 +1,14 @@
 html, body {
-    min-height: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
 body {
-    background-image: url(../images/background.jpg);
+    /* background-image: url(../images/background.jpg); */
+    background-color: transparent;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow-y: scroll;
 }
 
 .layout  {
@@ -444,3 +445,4 @@ a {
 .bmd-fab-speed-dial-list {
     margin-top: -67%;
 }
+
